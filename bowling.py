@@ -15,16 +15,12 @@ def score(game):
                 result += 10 - get_value(game[i+1])
             else:
                 result += get_value(game[i+2])
-        last = get_value(game[i])
-        if not in_first_half:
-            frame += 1
-        if in_first_half == True:
+        if in_first_half:
             in_first_half = False
         else:
             in_first_half = True
-        #if game[i].lower() == 'x':
-        #    in_first_half = True
-        #    frame += 1
+            frame += 1
+        last = get_value(game[i])
     return result
 
 
