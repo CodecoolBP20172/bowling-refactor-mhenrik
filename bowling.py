@@ -1,5 +1,4 @@
 def score(game):
-    print(game)
     result = 0
     frame = 1
     in_first_half = True
@@ -13,7 +12,7 @@ def score(game):
         if frame < 10  and get_value(game[i]) == 10:
             if game[i] == '/':
                 result += get_value(game[i+1])
-            elif game[i] == 'X' or game[i] == 'x':
+            elif game[i].lower() == 'x':
                 result += get_value(game[i+1])
                 if game[i+2] == '/':
                     result += 10 - get_value(game[i+1])
@@ -50,7 +49,6 @@ def get_value(char):
         else:
             raise ValueError()
 
-score("11111111112222222222") #30)
-score("5/11------------3/11") #26)
+#score("11111111112222222222") #30)
+score("5/X1------------3/11") #26)
 score("1/35XXX458/X3/23")     #160)
-score("1/35XXX458/X3/XX6")    #189)
