@@ -23,9 +23,9 @@ def score(game):
             else:
                 result += get_value(game[i+2])
         if in_first_half:
-            in_first_half = False  # begin new frame
+            in_first_half = False  # end of frame 2/1
         else:
-            in_first_half = True
+            in_first_half = True  # end of frame 2/2
             frame += 1 
         last = get_value(game[i])  # to count if there is a spare
     return result
